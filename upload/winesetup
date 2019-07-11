@@ -1,0 +1,20 @@
+winetricks :
+
+sudo apt-get install winetricks
+apt install winbind
+apt install wine32
+apt install wine64
+
+
+rm -fr ~/.wine  
+export WINEARCH="win32"
+export WINEPREFIX=~/.wine/
+
+winetricks dotnet40
+WINEARCH=win32 WINEPREFIX=~/.wine winecfg
+env WINEARCH=win32 WINEPREFIX=~/.wine winetricks dotnet45
+
+wine Pi_Setup
+
+sudo apt-get install mono
+sudo apt-get install mono-complete

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/home/krishna/PycharmProjects/untitled/python/templates/style.css">
+</head>
+ <body>
+  <form id = "form" action = "http://localhost:5000/uploader" method="POST"
+         enctype = "multipart/form-data">
+          <h1>Upload the fle in zip format.</h1>
+         <input type = "file" name = "file[]" multiple=" " />
+         <input type = "submit" value="Upload"/></br>
+         <p>Click below to clear the files</p>
+         <button type = "reset" value="Clear">Clear</button>
+  </form>
+ </body>
+</html>
