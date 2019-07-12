@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Proxy report</title>
+    <link rel="stylesheet"  href="{{ url_for('static',filename='style.css')}}">
 </head>
 <body>
-$END$
+ {% if ext=="zip" %}
+   <head>
+    <meta http-equiv="refresh" content="30;url=http://localhost:5000/proxyreport" />
+    <div class="loader">{{month}} {{year}} report will get get downloaded soon nw
+            <span class="loader__dot">.</span>
+            <span class="loader__dot">.</span>
+            <span class="loader__dot">.</span>
+    </div>
+   </head>
+ {% else %}
+  <p>Supports only zip formatted files</p>
+ {% endif %}
 </body>
 </html>

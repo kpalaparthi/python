@@ -1,0 +1,59 @@
+﻿#!/usr/bin/python
+import sys, re, os
+program='HTML to CSV'
+inputfile=sys.argv[1]
+outputfilename='outputs/csv/'+os.path.splitext(inputfile)[0]+'.csv'
+fl=open(inputfile, "r")
+fw=open(outputfilename,"w+")
+k=[]
+kk=[]
+kkk=[]
+kkkk=[]
+kkkkk=[]
+kkkkkk=[]
+kkkkkkk=[]
+kkkkkkkk=[]
+kkkkkkkkk=[]
+kkkkkkkkkk=[]
+for line in fl:
+ if line[0:4] == "<TR>":
+    k.append(line)
+fl.close()
+for i in k:
+   j=re.sub(r'<TR><TD>','',i)
+   kk.append(j)
+
+for c in kk:
+   cl=re.sub(r'</TD><TD>',',',c)
+   kkk.append(cl)
+for d in kkk:
+   cr=re.sub(r'</TD></TR>\r\n',',',d)
+   kkkk.append(cr)
+
+for e in kkkk:
+   ca=re.sub(r'<A HREF="#','',e)
+   kkkkk.append(ca)
+
+for f in kkkkk:
+   cg=re.sub(r'>','',f)
+   kkkkkk.append(cg)
+
+for g in kkkkkk:
+   ct=re.sub(r'</TD,<TD class=','',g)
+   kkkkkkk.append(ct)
+
+for h in kkkkkkk:
+   cab=re.sub(r'</A','',h)
+   kkkkkkkk.append(cab)
+
+for m in kkkkkkkk:
+   cam=re.sub(r'</TD<TD class="',',',m)
+   kkkkkkkkk.append(cam)
+for n in kkkkkkkkk:
+   caq=re.sub(r'"',',',n)
+   kkkkkkkkkk.append(caq)
+
+print 'Converting %s to %s...' % (inputfile, outputfilename)
+for w in kkkkkkkkkk :
+ if w[0:4] != "<TR<":
+   fw.write('\r'+w+'\r')

@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="/home/krishna/PycharmProjects/untitled/python/templates/style.css">
+    <title>Proxy report</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
  <body>
   <form id = "form" action = "http://localhost:5000/uploader" method="POST"
          enctype = "multipart/form-data">
-          <h1>Upload the fle in zip format.</h1>
-         <input type = "file" name = "file[]" multiple=" " />
-         <input type = "submit" value="Upload"/></br>
-         <p>Click below to clear the files</p>
-         <button type = "reset" value="Clear">Clear</button>
+          <h1>Upload the file in zip format to generate the report</h1>
+
+   <input type = "file" name = "file[]" multiple=" " />
+   <select name="Month">
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+          </select>
+   <select name="Year">
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          </select>
+   <input type = "submit" value="Generate report"/></br>
+
+   <p>Click below to clear the files</p>
+   <button type = "reset" value="Clear">Clear</button>
+   <p> Please reach tss india for more information</p>
   </form>
  </body>
 </html>
